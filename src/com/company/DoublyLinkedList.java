@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.HashSet;
+
 public class DoublyLinkedList {
     private Node head = null;
     private Node tail = null;
@@ -144,7 +146,7 @@ public class DoublyLinkedList {
 
     public int lastIndexOf(int value) {
         if (isPresent(value)) {
-            int currentIndex = this.getSize() - 1;
+            int currentIndex = this.size - 1;
             Node currentNode = this.tail;
             int lastIndex = currentIndex;
 
@@ -189,6 +191,24 @@ public class DoublyLinkedList {
 
         this.size--;
         return value;
+    }
+
+    public void removeDuplicates() {
+        HashSet<Integer> hashSet = new HashSet<>();
+        Node currentNode = this.head;
+        int currentIndex = 0;
+
+        do {
+            int value = currentNode.getValue();
+            if (hashSet.contains(value)) {
+                this.remove(currentIndex);
+            } else {
+                hashSet.add(value);
+                currentIndex++;
+            }
+
+            currentNode = currentNode.getNext();
+        } while (currentNode != null);
     }
 
     public void removeAll() {
