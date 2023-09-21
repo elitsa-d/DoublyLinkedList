@@ -23,5 +23,6 @@ public class Main {
         list.print();
 
         System.out.println("Set on index 2 value of: " + list.set(1, 24));
+        list.printBackwards();
     }
 }

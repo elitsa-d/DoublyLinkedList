@@ -54,6 +54,17 @@ public class DoublyLinkedList {
         System.out.println();
     }
 
+    public void printBackwards() {
+        Node currentNode = this.tail;
+
+        do {
+            System.out.print(currentNode.getValue() + " ");
+            currentNode = currentNode.getPrev();
+        } while (currentNode != null);
+
+        System.out.println();
+    }
+
     public int getSize() {
         return this.size;
     }
