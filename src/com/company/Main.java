@@ -10,6 +10,11 @@ public class Main {
         list.add(16);
         list.add(1);
 
+        for (int i = 0; i < list.getSize(); i++) {
+            System.out.println(list.get(i));
+        }
+
+        System.out.println("Element location on position #2 from end to start is: " + list.getNthToLast(2));
         list.removeDuplicates();
 
         for (int i = 0; i < list.getSize(); i++) {
