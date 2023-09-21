@@ -78,6 +78,10 @@ public class DoublyLinkedList {
     }
 
     public int getNthToLast(int n) {
+        if (n > this.size) {
+            throw new IndexOutOfBoundsException();
+        }
+
         int current = 1;
         Node currentNode = this.tail;
 
