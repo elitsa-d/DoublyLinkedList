@@ -43,6 +43,17 @@ public class DoublyLinkedList {
         return currentNode;
     }
 
+    public void print() {
+        Node currentNode = this.head;
+
+        do {
+            System.out.print(currentNode.getValue() + " ");
+            currentNode = currentNode.getNext();
+        } while (currentNode != null);
+
+        System.out.println();
+    }
+
     public int getSize() {
         return this.size;
     }
